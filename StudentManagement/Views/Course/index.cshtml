@@ -1,0 +1,38 @@
+﻿<h1>Student Management System</h1>
+<p>
+    <a asp-controller="Course" asp-action="Add">Add Course</a>
+</p>
+<p>
+    <a asp-controller="Course" asp-action="Add">Delete Course</a>
+</p>
+<p>
+    <a asp-controller="Course" asp-action="Edit">Edit Course</a>
+</p>
+@if (ViewBag.course.Count==0)
+{
+    <p>No Course yet</p>
+}
+else
+{
+    <table class="table">
+        <tr>
+             <th>
+                CourseId
+            </th>
+            <th>
+                CourseName
+            </th>
+            <th>
+               Description
+            </th>
+        </tr>
+@foreach (var evt in ViewBag.course)
+{
+   <tr>
+      <td>@evt.CourseId</td>
+      <td>@evt.CourseName</td>
+      <td>@evt.Description</td>
+   </tr>
+}
+</table>
+}

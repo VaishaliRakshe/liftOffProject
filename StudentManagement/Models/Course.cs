@@ -1,27 +1,44 @@
 ﻿
     
 using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
-namespace StudentManagement.Models
+using System;
+
+namespace StydentManagementSystem1.Models
 {
     public class Course
     {
-        [Key]
-        
-        public string CourseID { get; set; }
-        public string CourseTitle { get; set; }
+        public int CourseId { get; set; }
+        public string CourseName { get; set; }
         public string Description { get; set; }
-        public Course(string courseId, string courseTitle, string description)
-        {
-            CourseID = courseId;
-            CourseTitle = courseTitle;
-            Description = description;
+        private static int nextId = 1;
 
+        public Course()
+        {
+            CourseId = nextId;
+            nextId++;
+        }
+        public Course(string name, string description)
+
+        {
+            CourseName = name;
+            Description = description;
 
         }
 
+        public override string ToString()
+        {
+            return CourseName;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Course course &&
+                   CourseId == course.CourseId;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(CourseId);
+        }
     }
 }

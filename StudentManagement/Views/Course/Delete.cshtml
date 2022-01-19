@@ -1,0 +1,16 @@
+﻿<h1>Delete Course</h1>
+
+<form method="post">
+   @foreach (var evt in ViewBag.course)
+   {
+      <div class="form-group">
+            <label>
+               <span>@evt.CourseName</span>
+               <input type="checkbox" name="courseIds" value="@evt.CourseId" class="form-control">
+            </label>
+      </div>
+   }
+
+   <input type="submit" value="Delete Selected Course" class="btn btn-danger">
+
+</form>

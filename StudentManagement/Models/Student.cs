@@ -1,15 +1,34 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
 
-namespace StudentManagement.Models
+namespace StydentManagementSystem1.Models
 {
     public class Student
     {
-        [Key]
-        public int ID { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public string RePassword { get; set; }
+        public int StudentId { get; set; }
+        public string StudentName { get; set; }
+        public string Address { get; set; }
+        private static int nextId = 1;
+
+        public Student()
+        {
+            StudentId = nextId;
+            nextId++;
+        }
+        public Student(string studentName, string address)
+        {
+            StudentName = studentName;
+            Address = address;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Student student &&
+                   StudentId == student.StudentId;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(StudentId);
+        }
     }
 }
