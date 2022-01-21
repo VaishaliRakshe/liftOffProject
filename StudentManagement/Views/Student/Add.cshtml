@@ -1,12 +1,16 @@
-﻿<h1>Add Student</h1>
+﻿@using StudentManagement.ViewModels
+@model AddStudentViewModel
+
+<h1>Add Student</h1>
 <form method="post">
     <div class="form-group">
-        <label for ="studentname">StudentName</label>
-        <input name="studentname" type="text"/>
+        <label for ="studentName">Student</label>
+        <input name="studentNname" type="text"/>
     </div>
-   <div class="form-group">
-        <label for ="address">Address</label>
-        <input name="address" />
+    <div class="form-group">
+        <label for ="address">Address></label>
+        <input name="address" type="text"/>
     </div>
+   
    <input type="submit" value="Add Student">
 </form>

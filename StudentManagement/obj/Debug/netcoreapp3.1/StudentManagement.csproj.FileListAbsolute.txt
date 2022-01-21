@@ -57,3 +57,5 @@ C:\Users\vaish\OneDrive\Desktop\LaunchcodeUnit2\Csharp\StudentManagement\Student
 C:\Users\vaish\OneDrive\Desktop\LaunchcodeUnit2\Csharp\StudentManagement\StudentManagement\obj\Debug\netcoreapp3.1\Razor\Views\Course\index.cshtml.g.cs
 C:\Users\vaish\OneDrive\Desktop\LaunchcodeUnit2\Csharp\StudentManagement\StudentManagement\obj\Debug\netcoreapp3.1\Razor\Views\Student\Add.cshtml.g.cs
 C:\Users\vaish\OneDrive\Desktop\LaunchcodeUnit2\Csharp\StudentManagement\StudentManagement\obj\Debug\netcoreapp3.1\Razor\Views\Student\Index.cshtml.g.cs
+C:\Users\vaish\OneDrive\Desktop\LaunchcodeUnit2\Csharp\StudentManagement\StudentManagement\obj\Debug\netcoreapp3.1\Razor\Views\Teacher\Add.cshtml.g.cs
+C:\Users\vaish\OneDrive\Desktop\LaunchcodeUnit2\Csharp\StudentManagement\StudentManagement\obj\Debug\netcoreapp3.1\Razor\Views\Teacher\Index.cshtml.g.cs

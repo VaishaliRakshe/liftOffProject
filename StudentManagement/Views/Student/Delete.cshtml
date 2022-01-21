@@ -1,0 +1,16 @@
+﻿<h1>Delete Student</h1>
+
+<form method="post">
+   @foreach (var evt in Model.student)
+   {
+      <div class="form-group">
+            <label>
+               <span>@evt.StudentName</span>
+               <input type="checkbox" name="studentIds" value="@evt.StudentId" class="form-control">
+            </label>
+      </div>
+   }
+
+   <input type="submit" value="Delete Selected Student" class="btn btn-danger">
+
+</form>

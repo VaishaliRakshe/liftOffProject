@@ -1,0 +1,40 @@
+﻿@using StudentManagement.Models
+
+<h1>Student Management System</h1>
+<p>
+    <a asp-controller="Teacher" asp-action="Add">Add Teacher</a>
+</p>
+<p>
+    <a asp-controller="Teacher" asp-action="Delete">Delete Teacher</a>
+</p>
+<p>
+    <a asp-controller="Teacher" asp-action="Edit">Edit Teacher</a>
+</p>
+@if (Model.Count==0)
+{
+    <p>No Teacher yet</p>
+}
+else
+{
+    <table class="table">
+        <tr>
+             <th>
+                FirstName
+            </th>
+            <th>
+                LastName
+            </th>
+            <th>
+               Email
+            </th>
+        </tr>
+@foreach (var evt in Model)
+{
+   <tr>
+      <td>@evt.FirstName</td>
+      <td>@evt.LastName</td>
+      <td>@evt.Email</td>
+   </tr>
+}
+</table>
+}

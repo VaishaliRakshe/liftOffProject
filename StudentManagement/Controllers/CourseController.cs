@@ -1,5 +1,6 @@
 ﻿
 using Microsoft.AspNetCore.Mvc;
+using StudentManagement.ViewModels;
 using StydentManagementSystem1.Data;
 using StydentManagementSystem1.Models;
 using System.Collections.Generic;
@@ -13,21 +14,26 @@ namespace StydentManagementSystem1.Controllers
         public IActionResult Index()
         {
 
-            ViewBag.course = CourseData.GetAll();
-            return View();
+            List<Course>course = new List<Course>(CourseData.GetAll());
+            return View(course);
 
         }
         [HttpGet]
         public IActionResult Add()
         {
-
-            return View();
+            AddCourseViewModel addCourseViewModel = new AddCourseViewModel();
+            return View(addCourseViewModel);
 
         }
         [HttpPost]
-        [Route("/Course/Add")]
-        public IActionResult NewCourse(Course newCourse)
+        
+        public IActionResult Add(AddCourseViewModel addCourseViewModel)
         {
+            Course newCourse = new Course
+            {
+                CourseName=addCourseViewModel.CourseName,
+                Description=addCourseViewModel.Description
+            };
             CourseData.Add(newCourse);
 
             return Redirect("/Course");
